@@ -1,6 +1,6 @@
 {
     "normal":{
-        "strong_against": ["None"],
+        "strong_against": ["None\nNOne    test\n"],
         "weak_against": ["Rock", "Ghost", "Steel"],
         "resistant_to": ["Ghost"],
         "vulnerable_to": ["Fighting"]

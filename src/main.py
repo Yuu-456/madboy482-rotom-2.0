@@ -117,18 +117,19 @@ def ptype(app, message):
     app.send_message(
         chat_id=message.chat.id,
         text=(f"Type  :  `{gtype.lower()}`\n\n"
-              f"Strong Against:\n`{strong_against}`\n\n"
+              f"GEN1:\n`{strong_against}`\n\n"
               f"Weak Against:\n`{weak_against}`\n\n"
               f"Resistant To:\n`{resistant_to}`\n\n"
               f"Vulnerable To:\n`{vulnerable_to}`"),
         reply_markup=InlineKeyboardMarkup(keyboard)
            
     )
+    
 
 # ==== Types List =====
 def ptype_buttons(user_id):
     keyboard = ([[
-        InlineKeyboardButton('Normal',callback_data=f"type_normal_{user_id}"),
+        InlineKeyboardButton('GEN1',callback_data=f"type_normal_{user_id}"),
         InlineKeyboardButton('Fighting',callback_data=f"type_fighting_{user_id}"),
         InlineKeyboardButton('Flying',callback_data=f"type_flying_{user_id}")]])
     keyboard += ([[
@@ -183,7 +184,7 @@ def button(client: app, callback_query: CallbackQuery):
             InlineKeyboardButton('Back',callback_data=f"hexa_back_{user_id}")]])
             callback_query.message.edit_text(
                 text=(f"Type  :  `{type_n}`\n\n"
-                f"Strong Against:\n`{strong_against}`\n\n"
+                f"GEN1:\n`{strong_against}`\n\n"
                 f"Weak Against:\n`{weak_against}`\n\n"
                 f"Resistant To:\n`{resistant_to}`\n\n"
                 f"Vulnerable To:\n`{vulnerable_to}`"),

@@ -60,7 +60,7 @@ def get_bot_data(app, message):
     message.continue_propagation()
 
 
-@app.on_message(Filters.command(['stats', 'stats@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['stats', 'stats@officerjennyprobot']))
 def get_stats(app, message):
     if message.from_user.id in Config.sudo:
         members = 0
@@ -78,7 +78,7 @@ def get_stats(app, message):
 
 
 # ===== Home =====
-@app.on_message(Filters.command(['start', 'start@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['start', 'start@officerjennyprobot']))
 def start(app, message):
     app.send_message(
         chat_id=message.chat.id,
@@ -87,7 +87,7 @@ def start(app, message):
     )
 
 # ==== Type Pokemon =====
-@app.on_message(Filters.command(['type', 'type@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['type', 'type@officerjennyprobot']))
 def ptype(app, message):
     try:
         gtype = message.text.split(' ')[1]
@@ -153,7 +153,7 @@ def ptype_buttons(user_id):
         InlineKeyboardButton('Delete',callback_data=f"hexa_delete_{user_id}")]])
     return keyboard
     
-@app.on_message(Filters.command(['types', 'types@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['types', 'types@officerjennyprobot']))
 def types(app, message): 
     user_id = message.from_user.id
     app.send_message(
@@ -217,7 +217,7 @@ def button2(client: app, callback_query: CallbackQuery):
         )
   
 # ===== Pokemon Type Command ======
-@app.on_message(Filters.command(['ptype', 'ptype@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['ptype', 'ptype@officerjennyprobot']))
 def poketypes(app, message): 
     user_id = message.from_user.id
     try:
@@ -314,10 +314,10 @@ def poketypes_back(client: app, callback_query: CallbackQuery):
         
 # ===== Data command =====
 @app.on_callback_query(Filters.create(lambda _, query: 'basic_infos' in query.data))
-@app.on_message(Filters.command(['data', 'data@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['data', 'data@officerjennyprobot']))
 def pkmn_search(app, message):
     try:
-        if message.text == '/data' or message.text == '/data@MadBoy_Rotomgram2_Bot':
+        if message.text == '/data' or message.text == '/data@officerjennyprobot':
             app.send_message(message.chat.id, texts['error1'], parse_mode='HTML')
             return None
         pkmn = func.find_name(message.text)
@@ -473,7 +473,7 @@ def locations(app, call):
 
 # ===== Usage command =====
 @app.on_callback_query(Filters.create(lambda _, query: 'usage' in query.data))
-@app.on_message(Filters.command(['usage', 'usage@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['usage', 'usage@officerjennyprobot']))
 def usage(app, message):
     try:
         page = int(re.split('/', message.data)[1])
@@ -501,7 +501,7 @@ def usage(app, message):
 
 
 # ===== FAQ command =====
-@app.on_message(Filters.command(['faq', 'faq@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['faq', 'faq@officerjennyprobot']))
 def faq(app, message):
     text = texts['faq']
     app.send_message(
@@ -514,7 +514,7 @@ def faq(app, message):
 
 
 # ===== About command =====
-@app.on_message(Filters.command(['about', 'about@MadBoy_Rotomgram2_Bot']))
+@app.on_message(Filters.command(['about', 'about@officerjennyprobot']))
 def about(app, message):
     text = texts['about']
     markup = InlineKeyboardMarkup([[

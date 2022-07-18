@@ -236,6 +236,7 @@ def get_base_data(pkmn, pkmn_name):
     first_type = re.split(' / ', typee)[0]
     emoji = emoji_dict[first_type]
     national = pkmn['national']
+    best = pkmn['best']
     artwork = pkmn['artwork']
 
     return {
@@ -244,6 +245,7 @@ def get_base_data(pkmn, pkmn_name):
         'evo_text': evo_text,
         'base_stats': base_stats,
         'legend': legend,
+        'best': best,
         'typee': typee,
         'typee_str': typee_str,
         'name': pkmn_name,

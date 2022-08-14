@@ -543,7 +543,7 @@ def bot_added(app, message):
                 text=text
             )
             
-@app.on_message(filters.command(["generation", "generations"]))
+@app.on_message(Filters.command(["generation", "generations"]))
 async def photo(client: app, message: Message):
    await client.send_message(
       chat_id=message.chat.id,

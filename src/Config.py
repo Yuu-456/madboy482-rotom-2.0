@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+load_dotenv('.env')
+
 
 class Config:
     aid = int(os.environ.get("API_ID", "2163860"))

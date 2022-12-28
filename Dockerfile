@@ -17,4 +17,4 @@ COPY requirements.txt .
 RUN pip3 install wheel
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 COPY . .
-CMD ["python3", "-m", "src"]
+CMD ["python3", "-m", "src/main"]
